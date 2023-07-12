@@ -17,12 +17,5 @@ export class FormularioComponent {
       ciudad: new FormControl('', [Validators.required])
     });
   }
-
-  submitForm() {
-    if (this.formulario.valid) {
-      
-    } else {
-      
-    }
-  }
+  
 }
