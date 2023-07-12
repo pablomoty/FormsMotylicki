@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Formulario</h2>
+  
+    <form [formGroup]="formulario" (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" class="form-control" formControlName="nombre">
+        <div *ngIf="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched" class="text-danger">
+          El nombre es obligatorio.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" class="form-control" formControlName="correo">
+        <div *ngIf="formulario.get('correo')?.invalid && formulario.get('correo')?.touched" class="text-danger">
+          El correo es obligatorio.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" class="form-control" formControlName="password">
+      </div>
+  
+      <div class="form-group">
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" class="form-control" formControlName="ciudad">
+        <div *ngIf="formulario.get('ciudad')?.invalid && formulario.get('ciudad')?.touched" class="text-danger">
+          La ciudad es obligatoria.
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">Enviar</button>
+    </form>
+  </div>
+  
+    
